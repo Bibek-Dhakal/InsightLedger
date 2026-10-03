@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[dev]
+
+      - name: Start Database
+        run: docker-compose up -d postgres
+
+      - name: Wait for PostgreSQL
+        run: sleep 10
+
+      - name: Initialize Database Data
+        run: python scripts/init_db.py
+
+      - name: Run dbt Tests & Build Models
+        run: |
+          cd dbt_project
+          dbt deps
+          dbt build --profiles-dir .
+
+      - name: Run Python Tests
+        run: pytest tests/

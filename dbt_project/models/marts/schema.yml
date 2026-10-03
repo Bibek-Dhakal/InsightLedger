@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fct_daily_kpis
+    description: "Daily aggregated KPIs including revenue and distinct purchasing users."
+    columns:
+      - name: reporting_date
+        tests:
+          - not_null
+          - unique
+      - name: purchasing_users
+        tests:
+          - not_null
+      - name: total_orders
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null

@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: public_data
+    database: insightledger
+    schema: public
+    tables:
+      - name: users
+      - name: orders
+      - name: experiments
