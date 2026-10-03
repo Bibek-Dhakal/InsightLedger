@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "insightledger"
-version = "0.1.0"
+version = "0.1.1"
 description = "Decision-support analytics: governed KPI definitions, reconciled data, self-serve dashboards, and statistically sound experiment analysis."
 readme = "README.md"
 requires-python = ">=3.10"

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Bibek-Dhakal/InsightLedger/compare/v0.1.0...v0.1.1) (2026-10-03)
+
+
+### Documentation
+
+* fix CHANGELOG.md link in v0.1.0 release notes to use absolute GitHub URL ([4c61d34](https://github.com/Bibek-Dhakal/InsightLedger/commit/4c61d34a1be40b85ae2fb294ac935ceb12ed3ed0))
+
 ## 0.1.0 (2026-10-03)
 
 
