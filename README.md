@@ -3,6 +3,9 @@
 Decision-support analytics: governed KPI definitions, reconciled data, self-serve dashboards, and statistically sound
 experiment analysis with quantified uncertainty.
 
+> 🏆 **Check out the [v0.1.0 Release Notes](./docs/releases/v0.1.0.md)** for a full visual walkthrough, including
+> architecture diagrams, dbt test runs, mathematical A/B test proofs, and BI dashboard screenshots!
+
 ## 🚀 Project Status: End-to-End Complete
 
 This project successfully implements a full modern data stack running locally via Docker. It demonstrates the ability to
