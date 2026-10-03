@@ -7,20 +7,20 @@ utilizing Python for data generation and statistical testing.
 
 ```mermaid
 graph TD
-subgraph "1. Ingestion"
-A[scripts/init_db.py\n(Mock Data Generator)] -->|psycopg2 writes|B[(PostgreSQL\nRaw Schema)]
-end
+    subgraph "1. Ingestion"
+        A["scripts/init_db.py<br>(Mock Data Generator)"] -->|psycopg2 writes| B[("PostgreSQL<br>Raw Schema")]
+    end
 
-subgraph "2. Transformation (dbt)"
-B -->|Reads Raw Data| C(Staging Models\nViews)
-C -->|Transforms & Joins|D(Marts / Fact Tables\nMaterialized Tables)
-D -.->|Automated Data Tests|D
-end
+    subgraph "2. Transformation (dbt)"
+        B -->|Reads Raw Data| C("Staging Models<br>Views")
+        C -->|Transforms & Joins| D("Marts / Fact Tables<br>Materialized Tables")
+        D -.->|Automated Data Tests| D
+    end
 
-subgraph "3. Serving & Analysis"
-D -->|Reads Clean Data|E[Metabase\nBI Dashboard]
-B -->|Reads Experiment Data|F[Jupyter Notebook\nA/B Test Analysis]
-end
+    subgraph "3. Serving & Analysis"
+        D -->|Reads Clean Data| E["Metabase<br>BI Dashboard"]
+        B -->|Reads Experiment Data| F["Jupyter Notebook<br>A/B Test Analysis"]
+    end
 ```
 
 ## Components
