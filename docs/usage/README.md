@@ -9,7 +9,7 @@
 
 2. **Start Infrastructure (PostgreSQL & Metabase):**
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 3. **Install Dependencies & Seed Data:**
@@ -38,5 +38,3 @@
     - **Password:** `password`
 
    Click **Save**. You can now query your curated dbt models (e.g., `fct_daily_kpis`) to build your dashboards.
-
----

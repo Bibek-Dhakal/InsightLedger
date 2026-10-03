@@ -23,7 +23,7 @@ jobs:
           pip install -e .[dev]
 
       - name: Start Database
-        run: docker-compose up -d postgres
+        run: docker compose up -d postgres
 
       - name: Wait for PostgreSQL
         run: sleep 10
